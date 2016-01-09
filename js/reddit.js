@@ -30,7 +30,7 @@ var maxrddts = 7;
 // makes call and gets json
 $.getJSON(
   //default url that returns top posts for the week based on the current date
-"http://www.reddit.com/r/" + subreddit + ".json?sort=top&t=week&limit=40&jsonp=?",
+"https://www.reddit.com/r/" + subreddit + ".json?sort=top&t=week&limit=40&jsonp=?",
 
 function defaultBuild(data)
 {
