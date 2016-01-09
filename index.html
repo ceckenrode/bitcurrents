@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>BitCurrents - Real-Time and Historical BitCoin Analytics</title>
   <!-- Materialize CSS-->
@@ -12,185 +11,201 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <!--Google Fonts-->
  <link href='https://fonts.googleapis.com/css?family=Passion+One|Russo+One' rel='stylesheet' type='text/css'>
-
-  <!-- Compiled and minified CSS -->
+<link href='https://fonts.googleapis.com/css?family=Philosopher:700|Playfair+Display|Cinzel:400,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed|Montserrat|Poiret+One' rel='stylesheet' type='text/css'>  <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-
-  <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+  <!--CSS Files-->
   <link rel="stylesheet" type="text/css" href="css/themes/default.css">
   <link rel="stylesheet" type="text/css" href="css/themes/default.date.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <link rel="stylesheet" type="text/css" href="css/materialize.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <!-- <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> -->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
 <!-- Navbar -->
-  <div class="row navbarL">
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo left col offset-l1"><img src="images/logo.png" width="140"></a>
-        <p class="col l9 offset-l1 m9 s7 navbarHead"> Real-Time and Historical BitCoin Analytics</p>
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
-        </ul>
-      </div>
-    </nav>
+  <nav>
+    <div class="nav-wrapper">
+     <a href="#!" class="brand-logo"><img src="images/logo.png" width="140" style="margin-left: 20px;"></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons"></i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#twitter" class="fa fa-twitter-square fa-2x"></a></li>
+        <li><a href="#reddit" class="fa fa-reddit-square fa-2x"></a></li>
+        <li><a href="#lineChart" class="fa fa-line-chart fa-2x"></a></li>
+        <li><a href="#youtube" class="fa fa-youtube-square fa-2x"></a></li>
+        <li><a href="mobile.html"></a></li>
+      </ul>
+    </div>
+  </nav>
+<!-- End: Navbar -->
+<!-- Current Bitcoin Prices --> 
+  <div class="row pricingColor">
+    <div class="col l2 offset-l1 m4 s12" ><p class="currencyName">British Pound</p>
+      <h4 class="currentPricing">
+        <span id="currentPriceGBP"></span>
+<br>
+        <span id="GBPPriceDiff"></span>
+      </h4>
+    </div>
+    <div class="col l2 offset-l2 m4 s12" ><p class="currencyName">US Dollar</p>
+      <h4 class="currentPricing">
+        <span id="currentPriceUSD"></span>
+<br>
+        <span id="USDPriceDiff"></span>
+      </h4>
+    </div>
+    <div class="col l2 offset-l2 m4 s12" ><p class="currencyName">Euro</p>
+        <h4 class="currentPricing">
+          <span id="currentPriceEUR"></span>
+<br>
+          <span id="EURPriceDiff"></span>
+        </h4>
+    </div>
   </div>
-<!-- Current Bitcoin Prices -->    
-        <div class="row pricingColor">
-          <div class="col l2 offset-l1 m4 s12" ><p class="currencyName">British Pound</p>
-            <h4 class="currentPricingL">
-              <span id="currentPriceGBP"></span>
-              <br>
-              <span id="GBPPriceDiff"></span>
-            </h4>
-          </div>
-          <div class="col l2 offset-l2 m4 s12" ><p class="currencyName">US Dollar</p>
-            <h4 class="currentPricingL">
-              <span id="currentPriceUSD"></span>
-              <br>
-              <span id="USDPriceDiff"></span>
-            </h4>
-          </div>
-          <div class="col l2 offset-l2 m4 s12" ><p class="currencyName">Euro</p>
-            <h4 class="currentPricingL">
-              <span id="currentPriceEUR"></span>
-              <br>
-              <span id="EURPriceDiff"></span>
-            </h4>
-          </div>
-        </div>
+<!-- End: Current Bitcoin Prices -->
 
+<!--New York Times, Twitter, and Reddit -->
+<!--New York Times-->
 
-
-<!--Google Charts-->
-
-  <div class="row ">
-    <div class="col l7 offset-l1 m7 s12 charts">
-      <div class="priceCharts">
-        <h3 class="title">Historical Pricing</h3>
-        <div id="myLineChart"></div>
+<div class="row">
+  <div class="col l7 offset-l1 m7 s11 mainContent nyTimes " style="margin-left: 20px;">
+    <div id="masthead">
+      <center><img class="nyTimesLogo" src="images/nyTimesLogo2.png" width="379"></center<img>
+    </div>
+    <div id="output">
+      <div class="row header">
       </div>
-
-      <div class="container">
-        <div class="row">
-          <div class="dateRange">
-            <h4 class="title">Date Range</h4>
-            <div class="col l6 m6">
-              <input type="text" class="form-control date-pick" id="startingDate" placeholder="Starting Date">
-            </div>
-
+    </div>
+  </div>
+  <!-- End: New York Times -->
+  <!-- Twitter -->
+  <div class="col l4 m4 s12" style="margin-left: 30px hide-on-med-and-down">
+    <div id="twitter" class="tweets">
+     <a class="twitter-timeline" href="https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed" data-widget-id="685718738688163840">Tweets from https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed</a>
+      <script>
+        ! function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0],
+            p = /^http:/.test(d.location) ? 'http' : 'https';
+          if (!d.getElementById(id)) {
+            js = d.createElement(s);
+            js.id = id;
+            js.src = p + "://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+          }
+        }(document, "script", "twitter-wjs");
+      </script>
+    </div>
+    <!-- End: Twitter -->
+    <br>
+    <!-- Reddit -->
+    <div id="reddit" class="reddit">
+      <center><img class="redditLogo" src="images/redditLogo.png" ></center>
+      <div class='reddit redditInfo'>
+        <div class="sub">
+          <div class="thumbs">
+          </div>
+          <ul class="posts">
+          </ul>
+          <div class="titles">
+            <ul class="urls">
+            </ul>
+        </div>
+      </div>
+    </div>
+<!--End: Reddit -->
+<br>
+<div id="youtube" class="youtube">
+          <iframe class="col l6 m6 s6" src="https://www.youtube.com/embed/cFj72hrUZt4" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="youtube">
+          <iframe class="col l6 m6 s6" src="https://www.youtube.com/embed/j7opj5-32hw" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="youtube">
+          <iframe class="col l6 m6 s6" src="https://www.youtube.com/embed/2UC_8NdR1To" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="youtube">
+          <iframe class="col l6 m6 s6" src="https://www.youtube.com/embed/l9jOJk30eQs" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+  </div>
+<!--End: Reddit -->
+<!--End: New York Times, Twitter, and Reddit -->
+<!--Google Charts-->
+<div class="row ">
+  <div class="col l7 m7 s12 charts" style="margin-left: 20px; hide-on-med-and-down">
+    <div id="lineChart" class="priceCharts">
+      <h3 class="title">Historical Pricing</h3>
+      <div id="myLineChart"></div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="dateRange">
+          <h4 class="title">Date Range</h4>
+          <div class="col l6 m6">
+            <input type="text" class="form-control date-pick" id="startingDate" placeholder="Starting Date">
+          </div>
           <div class="row">
             <div class="col l6 m6">
               <input type="text" class="form-control date-pick" id="endingDate" placeholder="Ending Date">
             </div>
           </div>
-
-
-
-
-            <div>
-              <a class='dropdown-button btn' data-activates='dropdown1'><span id="historicalCurrency">Pick a Currency</span><span class="caret"></span></a>
-              <ul id='dropdown1' class='dropdown-content'>
-                <li id="USDCur"><a>USD</a></li>
-                <li class="divider"></li>
-                <li><a id="GBPCur">GBP</a></li>
-                <li class="divider"></li>
-                <li><a id="EURCur">EUR</a></li>
-              </ul>
-            </div>
+          <div>
+            <a class='dropdown-button btn' data-activates='dropdown1'><span id="historicalCurrency">Pick a Currency</span><span class="caret"></span></a>
+            <ul id='dropdown1' class='dropdown-content'>
+              <li id="USDCur"><a>USD</a></li>
+              <li class="divider"></li>
+              <li><a id="GBPCur">GBP</a></li>
+              <li class="divider"></li>
+              <li><a id="EURCur">EUR</a></li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
-
+  </div>
+<!-- End: Google Charts -->
 <!-- Currency Converter -->
-    <div class="col l2 offset-l1 m5 s12">
-      <div class="priceConverter">
-        <h3 class="title">Currency Converter</h3>
-        <input type="text" class="form-control decimal" placeholder="Bitcoin" id="bitCoinStarting" value="">
-        <input type="text" class="form-control decimal" placeholder="Currency" id="realCurrency" value="">
-        <div class="btn-group">
+  <div class="col l2 offset-l1 m4 s12">
+    <div class="priceConverter">
+      <h3 class="title">Currency Converter</h3>
+      <input type="text" class="form-control decimal" placeholder="Bitcoin" id="bitCoinStarting" value="">
+      <input type="text" class="form-control decimal" placeholder="Currency" id="realCurrency" value="">
+      <div class="btn-group">
         <a class='dropdown-button btn' href='#' data-activates='dropdown2'><span id="selectedCurrency">USD</span><span class="caret"></span></a>
-          <ul id='dropdown2' class='dropdown-content'>
-            <li id="USDConvert"><a>USD</a></li>
-            <li class="divider"></li>
-            <li><a id="GBPConvert">GBP</a></li>
-            <li class="divider"></li>
-            <li><a id="EURConvert">EUR</a></li>
-          </ul>
-        </div>
+        <ul id='dropdown2' class='dropdown-content'>
+          <li id="USDConvert"><a>USD</a></li>
+          <li class="divider"></li>
+          <li><a id="GBPConvert">GBP</a></li>
+          <li class="divider"></li>
+          <li><a id="EURConvert">EUR</a></li>
+        </ul>
       </div>
     </div>
   </div>
-
-
-<!--Reddit and Twitter-->
-<div class="row">
-  <div class="col l8 m7 s12 mainContent news">
-    <h4 class="newsTitle">Current Reddit News</h4>
-    <section id="reddit" class='reddit single'>
-      <section class="sub">
-        <section class="thumbs">
-        </section>
-        <ul class="posts">
-        </ul>
-        <section class="titles">
-          <ul class="urls">
-          </ul>
-        </section>
-        <section class="combined">
-        </section>
-      </section>
-  </div>
-  <div class="col l4  m5 s12 tweets">
-    <a class="twitter-timeline" href="https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed" data-widget-id="682335870863605763">Tweets from https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed</a>
-    <script>
-      ! function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0],
-          p = /^http:/.test(d.location) ? 'http' : 'https';
-        if (!d.getElementById(id)) {
-          js = d.createElement(s);
-          js.id = id;
-          js.src = p + "://platform.twitter.com/widgets.js";
-          fjs.parentNode.insertBefore(js, fjs);
-        }
-      }(document, "script", "twitter-wjs");
-    </script>
-  </div>
 </div>
+<!-- End: Currency Converter -->
+  <br>
+  <footer class="page-footer">
+      <div class="row footerMargin">
+        <div class="col l12 footer">
+          <img src="images/logo.png" width="140">
+          <h5>Created by Rutgers Coding Bootcamp Students: Sean Conaty, Christian Eckenrode, and Daniel Petro</h5>
+          <h6>BitCurrents is dedicated to providing real-time and historical Bitcoin data through a variety of open-source applications. As students enrolled in the Rutgers Coding Bootcamp, BitCurrents was created as a group front-end project showcasing the web development tools we have learned so far. </h6>
+          <h6 > Programming languages used: HTML, CSS, Javascript, jQuery, Ajax, Bootstrap, and MaterializeCSS.
+          <br>API's used: Coindesk, The New York Times, Reddit, Google Charts, Twitter and Youtube widgets.</h6>
+        </div>
+      </div>
+    <div class="footer-copyright ">
+      <div class="container">
+        <div class="row">
+            <div class="copyright">&copy; 2016 BitCurrents, Inc.</div>
+        </div>
+      </div>
+    </div>
+        </footer>
 
-
-<!--Youtube Videos-->
-  <div class="row" id="modal1">
-    <div class="youtube">
-      <iframe class="col l3 m6 s12" width="560" height="315" src="https://www.youtube.com/embed/cFj72hrUZt4" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div class="youtube">
-      <iframe class="col l3 m6 s12" width="560" height="315" src="https://www.youtube.com/embed/j7opj5-32hw" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div class="youtube">
-      <iframe class="col l3 m6 s12" width="560" height="315" src="https://www.youtube.com/embed/2UC_8NdR1To" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div class="youtube">
-      <iframe class="col l3 m6 s12" width="560" height="315" src="https://www.youtube.com/embed/l9jOJk30eQs" frameborder="0" allowfullscreen></iframe>
-    </div>
-  </div>
-
-<footer>
-  <div class="row">
-    <div class="col l10 offset-l1 footer">
-      <img src="images/logo.png" width="140">
-        <h6>BitCurrents is dedicated to providing real-time and historical Bitcoin data through a variety of open-source applications. As students enrolled in the Rutgers Coding Bootcamp, BitCurrents was created as a group front-end project showcasing the web development tools we have learned so far. </h6>
-        <h7 > Programming languages used: HTML, CSS, Javascript, jQuery, Ajax, Bootstrap, and MaterializeCSS.</h7>
-        <h7>API's used: Coindesk, Reddit, Google Charts, Twitter and Youtube widgets.</h7>
-          <p class="copyright">&copy; 2016 BitCurrents, Inc.</p>
-    </div>
-  </div>
-</footer>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script type="text/javascript" src="js/globalVariables.js"></script>
   <script type="text/javascript" src="js/picker.js"></script>
   <script type="text/javascript" src="js/picker.date.js"></script>
@@ -199,17 +214,14 @@
   <script type="text/javascript" src="js/coindeskCurrencyConverter.js"></script>
   <script type="text/javascript" src="js/coindeskAPIHistorical.js"></script>
   <script type="text/javascript" src="js/googleCharts.js"></script>
-  <script type="text/javascript" src='js/reddit.js'></script>
+  <script type="text/javascript" src="js/reddit.js"></script>
+  <script type="text/javascript" src="js/nytimes.js"></script>
   <script type="text/javascript" src="js/bootbox.min.js"></script>
   <script type="text/javascript" src="js/navbar.js"></script>
-  <!-- Latest compiled and minified JavaScript -->
-  <!-- <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
-  
   <!--Materialize CSS-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="js/materialize.min.js"></script>
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
-          
 </body>
 </html>
