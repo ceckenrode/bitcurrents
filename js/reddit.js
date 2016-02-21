@@ -14,19 +14,19 @@ var maxrddts = 7;
 // console.log(startingDate);
 // console.log(endingDate);
 //conversion from start date format to unix time stamp (seconds since January 1st 1970). this is required to filter by dates via the reddit api
-// var startToUnix = moment(startingDate, "YYYY-MM-DD").valueOf();
-// console.log(startToUnix);
-// var realUnixStart = startToUnix/1000;
-// console.log(realUnixStart);
+var startToUnix = moment(startingDate, "YYYY-MM-DD").valueOf();
+console.log(startToUnix);
+var realUnixStart = startToUnix/1000;
+console.log(realUnixStart);
 //conversion from end date format to unix time stamp (seconds since January 1st 1970). this is required to filter by dates via the reddit api
-// var endToUnix = moment(endingDate, "YYYY-MM-DD").valueOf();
-// console.log(endToUnix);
-// var realUnixEnd = endToUnix/1000;
-// console.log(realUnixEnd);
+ var endToUnix = moment(endingDate, "YYYY-MM-DD").valueOf();
+ console.log(endToUnix);
+var realUnixEnd = endToUnix/1000;
+ console.log(realUnixEnd);
 //if startingDate !=== "" && endingDate !=== "") {
 
 // url for bitcoin subreddit filtered by user specified times
-//var bitcoinSubDateFiltered = "http://www.reddit.com/r/" + subreddit + "/search?sort=top&q=timestamp:" + startToUnix + ".." + endToUnix + "&syntax=cloudsearch&restrict_sr=on";
+var bitcoinSubDateFiltered = "https://www.reddit.com/r/" + subreddit + "/search?sort=top&q=timestamp:" + realUnixEnd + ".." + realUnixEnd + "&syntax=cloudsearch&restrict_sr=on";
 // makes call and gets json
 $.getJSON(
   //default url that returns top posts for the week based on the current date
@@ -54,18 +54,12 @@ function defaultBuild(data)
           item = '<li><p><strong><a href="' + post.data.url + '" target="_blank">' + post.data.title + '</strong></a></p>';
           item += '<p>' + post.data.ups + '&uarr; ' + post.data.downs + '&darr; | <a href="https://reddit.com' + post.data.permalink + '" target="_blank">' + post.data.num_comments + ' Comments</a></p></li>';
       }
-      // if (x=$.inArray(post.data.url.split('.').pop(), img)>0) {
-      //   console.log(x + ' : ' + post.data.url);
-      //   console.log('tbn: '+post.data.thumbnail);
-      //   tbn += '<a href="' + post.data.url + '" target="_blank"><img src="' + post.data.thumbnail + '"></a>';
-      // }
 
       $("#reddit .posts").append(item);
       $("#reddit .thumbs").append(tbn);
     }
-  )
-}
-)
+  );
+});
 
 $.ajax(
     url,
@@ -86,11 +80,9 @@ $.ajax(
                     //<a href="http://www.yahoo.com">here</a>
                 });
             } 
-     
-        //$("#reddit .titles").append(subredditOption);
-        //$("#reddit .urls").append(links);
         $("#reddit .combined").append(combo);
         $("#reddit .text").append(allSubredditComments);
     }
   }
 );
+
